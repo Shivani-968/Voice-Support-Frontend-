@@ -1,0 +1,1350 @@
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      #172554 0%,
+      #0f172a 35%,
+      #020617 75%
+    );
+
+  color: #e5e7eb;
+
+  min-height: 100vh;
+}
+
+
+/* =========================================
+   MAIN APP
+========================================= */
+
+.app {
+  width: 92%;
+  max-width: 1100px;
+
+  margin: 35px auto;
+
+  padding: 30px;
+
+  background:
+    rgba(15, 23, 42, 0.88);
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.18);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 20px 60px
+    rgba(0, 0, 0, 0.45),
+
+    0 0 50px
+    rgba(37, 99, 235, 0.08);
+
+  backdrop-filter: blur(15px);
+
+  animation:
+    appAppear 0.7s ease-out;
+}
+
+
+@keyframes appAppear {
+  from {
+    opacity: 0;
+    transform:
+      translateY(25px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.app h1 {
+  text-align: center;
+
+  margin-bottom: 22px;
+
+  font-size: 34px;
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      90deg,
+      #60a5fa,
+      #a78bfa,
+      #22d3ee
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation:
+    headingGlow 3s ease-in-out infinite;
+}
+
+
+@keyframes headingGlow {
+  0%,
+  100% {
+    filter:
+      drop-shadow(
+        0 0 5px
+        rgba(96, 165, 250, 0.2)
+      );
+  }
+
+  50% {
+    filter:
+      drop-shadow(
+        0 0 15px
+        rgba(96, 165, 250, 0.5)
+      );
+  }
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status {
+  position: relative;
+
+  width: fit-content;
+
+  min-width: 190px;
+
+  margin:
+    0 auto 20px;
+
+  padding:
+    11px 20px;
+
+  text-align: center;
+
+  border-radius: 30px;
+
+  background:
+    rgba(30, 41, 59, 0.8);
+
+  border:
+    1px solid
+    #334155;
+
+  color: #cbd5e1;
+
+  font-size: 15px;
+
+  transition:
+    0.3s ease;
+}
+
+
+.status strong {
+  color: #60a5fa;
+}
+
+
+.status.live {
+  border-color:
+    rgba(34, 197, 94, 0.4);
+
+  box-shadow:
+    0 0 20px
+    rgba(34, 197, 94, 0.12);
+}
+
+
+.status.live strong {
+  color: #4ade80;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+  display: block;
+
+  width: 220px;
+
+  margin: 12px auto;
+
+  padding: 14px 20px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #2563eb,
+      #4f46e5
+    );
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 20px
+    rgba(37, 99, 235, 0.3);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+button:hover {
+  transform:
+    translateY(-3px);
+
+  box-shadow:
+    0 12px 30px
+    rgba(37, 99, 235, 0.5);
+
+  background:
+    linear-gradient(
+      135deg,
+      #3b82f6,
+      #6366f1
+    );
+}
+
+
+button:active {
+  transform:
+    scale(0.96);
+}
+
+
+button:first-of-type {
+  animation:
+    buttonPulse 2.2s
+    ease-in-out infinite;
+}
+
+
+@keyframes buttonPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 8px 20px
+      rgba(37, 99, 235, 0.3);
+  }
+
+  50% {
+    box-shadow:
+      0 8px 30px
+      rgba(37, 99, 235, 0.65);
+  }
+}
+
+
+/* =========================================
+   AGENT SECTION
+========================================= */
+
+.agent-section {
+  display: grid;
+
+  grid-template-columns:
+    380px
+    1fr;
+
+  gap: 25px;
+
+  margin-top: 28px;
+}
+
+
+/* =========================================
+   ROBOT PHOTO CARD
+========================================= */
+
+.agent-photo-card {
+  padding: 18px;
+
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(37, 99, 235, 0.22),
+      rgba(15, 23, 42, 0.95) 70%
+    );
+
+  border:
+    1px solid
+    rgba(96, 165, 250, 0.25);
+
+  box-shadow:
+    0 18px 45px
+    rgba(0, 0, 0, 0.32),
+
+    inset 0 0 30px
+    rgba(59, 130, 246, 0.04);
+
+  text-align: center;
+}
+
+
+/* =========================================
+   ROBOT WRAPPER
+========================================= */
+
+.robot-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  border-radius: 17px;
+
+  overflow: hidden;
+
+  background: #e5e7eb;
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.3);
+
+  transition:
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+
+  animation:
+    robotIdle 3.5s
+    ease-in-out infinite;
+}
+
+
+/* Idle floating */
+
+@keyframes robotIdle {
+  0%,
+  100% {
+    transform:
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateY(-4px);
+  }
+}
+
+
+/* =========================================
+   ROBOT IMAGE
+========================================= */
+
+.robot-image {
+  display: block;
+
+  width: 100%;
+
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/* =========================================
+   SPEAKING STATE
+========================================= */
+
+.robot-wrapper.speaking {
+  animation:
+    robotSpeak 0.85s
+    ease-in-out infinite;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(34, 211, 238, 0.35),
+
+    0 0 30px
+    rgba(34, 211, 238, 0.2),
+
+    0 15px 40px
+    rgba(0, 0, 0, 0.35);
+}
+
+
+@keyframes robotSpeak {
+  0% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+
+  25% {
+    transform:
+      translateY(-2px)
+      rotate(-0.35deg);
+  }
+
+  50% {
+    transform:
+      translateY(1px)
+      rotate(0.35deg);
+  }
+
+  75% {
+    transform:
+      translateY(-2px)
+      rotate(-0.3deg);
+  }
+
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg);
+  }
+}
+
+
+/* =========================================
+   IMAGE SPEAKING EFFECT
+========================================= */
+
+.robot-wrapper.speaking .robot-image {
+  animation:
+    robotZoom 1.2s
+    ease-in-out infinite;
+}
+
+
+@keyframes robotZoom {
+  0%,
+  100% {
+    transform:
+      scale(1);
+  }
+
+  50% {
+    transform:
+      scale(1.018);
+  }
+}
+
+
+/* =========================================
+   ROBOT EYES
+========================================= */
+
+.robot-eye {
+  position: absolute;
+
+  width: 11%;
+
+  height: 11.8%;
+
+  background: #f9a8d4;
+
+  border-radius: 50%;
+
+  z-index: 4;
+
+  transform-origin:
+    center center;
+
+  box-shadow:
+    0 0 16px
+    rgba(249, 168, 212, 0.65);
+
+  animation:
+    robotBlink 4.2s infinite;
+}
+
+
+/* Left eye */
+
+.robot-eye-left {
+  left: 25.5%;
+  top: 39.3%;
+}
+
+
+/* Right eye */
+
+.robot-eye-right {
+  right: 25.5%;
+  top: 39.3%;
+}
+
+
+/* =========================================
+   EYE BLINK
+========================================= */
+
+@keyframes robotBlink {
+  0%,
+  43%,
+  47%,
+  100% {
+    transform:
+      scaleY(1);
+  }
+
+  45%,
+  46% {
+    transform:
+      scaleY(0.08);
+  }
+}
+
+
+/* =========================================
+   SPEAKING EYES
+========================================= */
+
+.robot-wrapper.speaking
+.robot-eye {
+  animation:
+    robotBlink 3.2s infinite;
+}
+
+
+/* =========================================
+   ROBOT MOUTH
+========================================= */
+
+.robot-mouth {
+  position: absolute;
+
+  left: 46%;
+
+  top: 49.25%;
+
+  width: 8%;
+
+  height: 1.25%;
+
+  border-radius: 50%;
+
+  background: #111827;
+
+  z-index: 4;
+}
+
+
+/* =========================================
+   TALKING MOUTH
+========================================= */
+
+.robot-wrapper.speaking
+.robot-mouth {
+  animation:
+    robotTalk 0.18s
+    ease-in-out infinite
+    alternate;
+}
+
+
+@keyframes robotTalk {
+  0% {
+    width: 7%;
+    height: 0.8%;
+  }
+
+  30% {
+    width: 8%;
+    height: 2%;
+  }
+
+  60% {
+    width: 6%;
+    height: 3%;
+  }
+
+  100% {
+    width: 8%;
+    height: 1%;
+  }
+}
+
+
+/* =========================================
+   MOUTH GLOW WHILE SPEAKING
+========================================= */
+
+.robot-wrapper.speaking
+.robot-mouth {
+  box-shadow:
+    0 0 8px
+    rgba(34, 211, 238, 0.35);
+}
+
+
+/* =========================================
+   VOICE WAVES
+========================================= */
+
+.voice-waves {
+  position: absolute;
+
+  right: 14px;
+
+  bottom: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 8px 10px;
+
+  border-radius: 12px;
+
+  background:
+    rgba(2, 6, 23, 0.82);
+
+  border:
+    1px solid
+    rgba(34, 211, 238, 0.2);
+
+  backdrop-filter: blur(8px);
+
+  z-index: 10;
+}
+
+
+.voice-waves span {
+  display: block;
+
+  width: 4px;
+
+  height: 12px;
+
+  border-radius: 5px;
+
+  background: #22d3ee;
+
+  box-shadow:
+    0 0 8px
+    rgba(34, 211, 238, 0.6);
+
+  animation:
+    voiceWave 0.6s
+    ease-in-out infinite;
+}
+
+
+.voice-waves span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.voice-waves span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.voice-waves span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.voice-waves span:nth-child(4) {
+  animation-delay: 0.1s;
+}
+
+.voice-waves span:nth-child(5) {
+  animation-delay: 0s;
+}
+
+
+@keyframes voiceWave {
+  0%,
+  100% {
+    height: 9px;
+  }
+
+  50% {
+    height: 30px;
+  }
+}
+
+
+/* =========================================
+   LIVE BADGE
+========================================= */
+
+.live-badge {
+  position: absolute;
+
+  left: 14px;
+
+  bottom: 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  padding:
+    8px 12px;
+
+  border-radius: 20px;
+
+  background:
+    rgba(2, 6, 23, 0.88);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+
+  backdrop-filter:
+    blur(8px);
+
+  color: #f1f5f9;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  z-index: 10;
+}
+
+
+/* =========================================
+   ONLINE DOT
+========================================= */
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 10px
+    rgba(34, 197, 94, 0.9);
+
+  animation:
+    onlinePulse 1.4s
+    ease-in-out infinite;
+}
+
+
+@keyframes onlinePulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+
+/* =========================================
+   AGENT NAME
+========================================= */
+
+.agent-photo-card h3 {
+  margin-top: 15px;
+
+  font-size: 19px;
+
+  color: #f8fafc;
+}
+
+
+.agent-role {
+  margin-top: 5px;
+
+  font-size: 13px;
+
+  color: #94a3b8;
+}
+
+
+/* =========================================
+   AGENT CONVERSATION
+========================================= */
+
+.agent-conversation {
+  min-height: 350px;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.96),
+      rgba(15, 23, 42, 0.72)
+    );
+
+  border:
+    1px solid
+    rgba(34, 211, 238, 0.15);
+
+  box-shadow:
+    inset 0 0 30px
+    rgba(34, 211, 238, 0.025);
+
+  animation:
+    panelAppear 0.6s
+    ease-out;
+}
+
+
+@keyframes panelAppear {
+  from {
+    opacity: 0;
+    transform:
+      translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* =========================================
+   AGENT RESPONSE HEADER
+========================================= */
+
+.agent-conversation-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding-bottom: 13px;
+
+  margin-bottom: 22px;
+
+  border-bottom:
+    1px solid #263449;
+}
+
+
+.agent-conversation-header span {
+  font-size: 22px;
+}
+
+
+.agent-conversation-header h2 {
+  margin: 0;
+
+  padding: 0;
+
+  border: none;
+
+  font-size: 21px;
+
+  color: #f1f5f9;
+}
+
+
+/* =========================================
+   AGENT MESSAGE BUBBLE
+========================================= */
+
+.agent-message-bubble {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  padding: 20px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(22, 101, 52, 0.18);
+
+  border:
+    1px solid
+    rgba(34, 197, 94, 0.25);
+
+  box-shadow:
+    0 8px 25px
+    rgba(34, 197, 94, 0.06);
+
+  animation:
+    messageAppear 0.45s
+    ease-out;
+}
+
+
+@keyframes messageAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+}
+
+
+/* =========================================
+   MESSAGE ICON
+========================================= */
+
+.agent-message-icon {
+  width: 44px;
+  height: 44px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    rgba(34, 197, 94, 0.15);
+
+  font-size: 20px;
+
+  border:
+    1px solid
+    rgba(34, 197, 94, 0.2);
+}
+
+
+/* =========================================
+   MESSAGE TEXT
+========================================= */
+
+.agent-message-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.agent-message-content strong {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 15px;
+
+  color: #4ade80;
+}
+
+
+.agent-message-content p {
+  margin: 0;
+
+  font-size: 17px;
+
+  line-height: 1.7;
+
+  color: #dbeafe;
+
+  word-wrap: break-word;
+}
+
+
+/* =========================================
+   ACTIVE INDICATOR
+========================================= */
+
+.listening-indicator {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+
+  margin-top: 20px;
+
+  font-size: 13px;
+
+  color: #94a3b8;
+}
+
+
+.listening-indicator span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #22d3ee;
+
+  animation:
+    indicatorPulse 1s
+    infinite alternate;
+}
+
+
+.listening-indicator span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.listening-indicator span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+
+@keyframes indicatorPulse {
+  from {
+    opacity: 0.25;
+
+    transform:
+      scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      scale(1.3);
+  }
+}
+
+
+/* =========================================
+   ACTIVE ORDER PANEL
+========================================= */
+
+.order-panel {
+  margin-top: 25px;
+}
+
+
+.order-panel p {
+  margin-top: 12px;
+}
+
+
+/* =========================================
+   GENERIC PANELS
+========================================= */
+
+.panel {
+  margin-top: 25px;
+
+  padding: 22px;
+
+  border-radius: 16px;
+
+  background:
+    rgba(15, 23, 42, 0.75);
+
+  border:
+    1px solid #263449;
+
+  box-shadow:
+    inset 0 0 20px
+    rgba(59, 130, 246, 0.025);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.panel:hover {
+  transform:
+    translateY(-2px);
+
+  border-color:
+    rgba(96, 165, 250, 0.35);
+
+  box-shadow:
+    0 10px 30px
+    rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   PANEL HEADINGS
+========================================= */
+
+.panel h2 {
+  margin-bottom: 18px;
+
+  font-size: 21px;
+
+  color: #f1f5f9;
+
+  border-bottom:
+    1px solid #263449;
+
+  padding-bottom: 10px;
+}
+
+
+/* =========================================
+   PANEL PARAGRAPHS
+========================================= */
+
+.panel > p {
+  margin-top: 15px;
+
+  font-size: 15px;
+
+  line-height: 1.5;
+
+  color: #94a3b8;
+}
+
+
+.panel > p strong {
+  color: #e2e8f0;
+}
+
+
+/* =========================================
+   EVENTS PANEL
+========================================= */
+
+.panel:last-child {
+  max-height: 300px;
+
+  overflow-y: auto;
+}
+
+
+/* =========================================
+   EVENT SCROLLBAR
+========================================= */
+
+.panel:last-child::-webkit-scrollbar {
+  width: 6px;
+}
+
+
+.panel:last-child::-webkit-scrollbar-track {
+  background:
+    #0f172a;
+
+  border-radius:
+    10px;
+}
+
+
+.panel:last-child::-webkit-scrollbar-thumb {
+  background:
+    #334155;
+
+  border-radius:
+    10px;
+}
+
+
+.panel:last-child::-webkit-scrollbar-thumb:hover {
+  background:
+    #475569;
+}
+
+
+/* =========================================
+   EVENT ITEMS
+========================================= */
+
+.panel:last-child p {
+  padding:
+    10px 0;
+
+  border-bottom:
+    1px solid #1e293b;
+
+  font-size: 14px;
+
+  line-height: 1.5;
+
+  color: #94a3b8;
+
+  animation:
+    eventAppear 0.35s
+    ease-out;
+}
+
+
+.panel:last-child p:last-child {
+  border-bottom: none;
+}
+
+
+.panel:last-child p strong {
+  color: #64748b;
+}
+
+
+@keyframes eventAppear {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0);
+  }
+}
+
+
+/* =========================================
+   AUDIO ELEMENT
+========================================= */
+
+audio {
+  display: none;
+}
+
+
+/* =========================================
+   MOBILE / TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+  .app {
+    width: 94%;
+
+    padding: 22px;
+  }
+
+  .agent-section {
+    grid-template-columns: 1fr;
+  }
+
+  .agent-photo-card {
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: 0 auto;
+  }
+
+  .agent-conversation {
+    min-height: auto;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .app {
+    width: 94%;
+
+    margin:
+      20px auto;
+
+    padding:
+      17px;
+
+    border-radius:
+      16px;
+  }
+
+
+  .app h1 {
+    font-size: 25px;
+
+    line-height: 1.2;
+  }
+
+
+  .status {
+    min-width: 170px;
+
+    font-size: 14px;
+  }
+
+
+  button {
+    width: 100%;
+
+    max-width: 320px;
+  }
+
+
+  .panel {
+    padding: 16px;
+  }
+
+
+  .robot-wrapper {
+    border-radius: 14px;
+  }
+
+
+  .agent-conversation {
+    padding: 18px;
+
+    border-radius: 16px;
+  }
+
+
+  .agent-message-bubble {
+    padding: 15px;
+  }
+
+
+  .agent-message-content p {
+    font-size: 15px;
+
+    line-height: 1.6;
+  }
+}
